@@ -7,16 +7,11 @@ SPRITE_PATH = "assets/car.png"
 CAR_SIZE  = (30, 60)
 CAR_ACCELERATION = 5
 CAR_MAX_VELOCITY = 10
-MAX_ENGINE_POW = 800
-CAR_WEIGHT = 200
-DRAG_COEFFICIENT = 0.3
-GRAVITY = 9.81
+MAX_ENGINE_POW = 100
 
-COLLISION_MAP = None
+
 
 next_id = 0
-
-
 
 class Car:
 
@@ -61,7 +56,7 @@ class Car:
 
         if not self.dead:
             if input_vector != Vector2((0,0)):
-                self.velocity += input_vector.normalize() * (engine_pow * MAX_ENGINE_POW - DRAG_COEFFICIENT * GRAVITY*CAR_WEIGHT)* dt
+                self.velocity += input_vector.normalize() * (engine_pow * MAX_ENGINE_POW)* dt
 
 
             self.angle= self.velocity.angle_to(Vector2((0,-1)))
